@@ -1,4 +1,4 @@
-# 🐧 The Linux Fan's Quick Guide to Azure on WSL  
+# The Linux Fan's Quick Guide to Azure on WSL  
 ### Bash, Bicep, and Beautiful Simplicity  
 Pragmatic, fast, and proudly Unix-y — with all the commands you need
 
@@ -8,7 +8,7 @@ This is a short, opinionated field manual: respectful to Windows, proudly Linux.
 
 ---
 
-## 🌍 Why Linux (WSL) for Azure engineers — the fan rationale
+## Why Linux (WSL) for Azure engineers — the fan rationale
 - **Composability:** one-liners and pipes that do exactly what you tell them.  
 - **Readability:** Bash scripts are just text — reviewable, diff-able, sharable.  
 - **Reproducibility:** parameterized Bicep + Bash runners = deterministic deploys.  
@@ -21,7 +21,7 @@ This is a short, opinionated field manual: respectful to Windows, proudly Linux.
 ## 0️⃣ Install WSL + load your environment  
 **Goal:** get Ubuntu running on WSL, then load your Windows repo’s env file so every new Bash session has your Azure variables.
 
-### 🪟 Install and choose your distro (PowerShell as Admin)
+### Install and choose your distro (PowerShell as Admin)
 ```powershell
 # List available distros
 wsl --list --online
@@ -37,7 +37,7 @@ wsl --set-default-version 2
 wsl --status
 
 
-🧩 Copy your environment from Windows into WSL
+Copy your environment from Windows into WSL
 
 Your file:
 C:\Users\SuarezTo\OneDrive - Unisys\Documents\GitHub\unisys_infra_repo\wsl_environment.env
@@ -59,7 +59,7 @@ grep -qxF '[[ -f ~/.env ]] && source ~/.env' ~/.bashrc || echo '[[ -f ~/.env ]] 
 source ~/.env
 
 
-✅ Important:
+Important:
 Make sure your .env has no spaces around =.
 Example:
 
@@ -179,7 +179,7 @@ kubectl get nodes
 # Example: check pods in a namespace
 kubectl get pods -n ns-xmregfro
 
-🧼 Troubleshooting
+Troubleshooting
 Symptom	Cause	Fix
 : command not found when sourcing .env	CRLF line endings or spaces around =	Run dos2unix ~/.env and remove spaces
 az: command not found	CLI not installed or PATH not refreshed	Re-run install step and restart WSL
